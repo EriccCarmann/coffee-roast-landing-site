@@ -1,0 +1,36 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn:focus-visible {
+  outline: 2px solid #e9885c;
+  outline-offset: 2px;
+}
+.btn[disabled] {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.btn--md { padding: 14px 24px; font-size: 1rem; }
+.btn--sm { padding: 9px 16px; font-size: 0.9rem; }
+
+.btn--primary { background: var(--accent); border-color: var(--accent); color: var(--cream); }
+.btn--primary:hover:not([disabled]) { background: var(--accent-dk); border-color: var(--accent-dk); }
+
+.btn--ghost { background: transparent; border-color: rgba(243, 237, 226, 0.45); color: var(--cream); }
+.btn--ghost:hover { border-color: var(--cream); background: rgba(243, 237, 226, 0.07); }
+
+.btn--outline { background: transparent; border-color: rgba(190, 67, 24, 0.5); color: var(--accent); }
+.btn--outline:hover { background: var(--accent); border-color: var(--accent); color: var(--card); }
+
+.btn--light { background: #f9f2e8; border-color: #f9f2e8; color: var(--accent-dk); }
+.btn--light:hover { background: #efe3d2; border-color: #efe3d2; }
