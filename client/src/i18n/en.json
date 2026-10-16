@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "Kvarta Roastery — fresh coffee from Minsk",
+    "description": "Small batches, roasted three times a week, delivered within 1–3 days of roasting. The roast date is printed on every bag."
+  },
+  "header": {
+    "brand": "Kvarta Roastery",
+    "slogan": "— fresh coffee, care for you",
+    "navLabel": "Page sections",
+    "langLabel": "Site language",
+    "nav": {
+      "freshness": "Why freshness",
+      "roasts": "Roasts",
+      "subscription": "Subscription",
+      "delivery": "Delivery",
+      "order": "Request"
+    }
+  },
+  "hero": {
+    "eyebrow": "Roasted in Minsk · since 2019",
+    "title": "Coffee, roasted <i>this week</i>",
+    "lead": "We roast in small batches and send your order within 1–3 days of roasting — no shelf coffee here.",
+    "btnRoasts": "Choose a roast",
+    "btnSubscription": "Subscription {price} BYN",
+    "note": "Leave a request — and we'll get in touch.",
+    "imgAlt": "A roasting machine with beans in our workshop",
+    "schedule": [
+      "<b>We roast</b> on Tuesdays, Thursdays and Saturdays",
+      "<b>Orders go out</b> within 1–3 days of roasting",
+      "<b>Roast date</b> is printed on every bag"
+    ]
+  },
+  "about": {
+    "title": "We roast our own coffee — and freshness is what decides it",
+    "p1": "There are two of us, and we care about quality rather than quantity: we roast only what we can sell within a couple of weeks.",
+    "p2": "Coffee is not wine: <b>its aroma lives through the first three to four weeks after roasting</b>, then the beans slowly lose what made you pick them. That's why we print the roast date on every bag and never hold beans longer than needed.",
+    "items": [
+      { "title": "Small batches", "text": "We roast two or three times a week — for orders, not for the shelf." },
+      { "title": "Within 1–3 days", "text": "Your order goes by courier or waits for pickup within 1–3 days of roasting." },
+      { "title": "Date on the bag", "text": "You can see when we roasted it. If something's off — call, we'll replace it, no questions." }
+    ],
+    "caption": "We pack every bag ourselves on the roast day.",
+    "imgAlt": "Freshly roasted coffee being packed in our workshop"
+  },
+  "products": {
+    "title": "What we've roasted",
+    "subtitle": "Prices per bag. Roasts come and go with the season — if one is out, we will suggest a similar flavour over the phone.",
+    "btn": "Request this",
+    "foot": "Not sure what to pick? Send a request without choosing — the manager will ask how you brew (espresso, turka, pour-over) and suggest the right roast.",
+    "items": {
+      "ethiopia": {
+        "name": "Ethiopia Yirgacheffe",
+        "flavor": "Floral, bergamot",
+        "roast": "Light roast · 250 g",
+        "unit": "per bag",
+        "alt": "Light-roasted Ethiopia Yirgacheffe beans"
+      },
+      "colombia": {
+        "name": "Colombia Huila",
+        "flavor": "Caramel, red apple",
+        "roast": "Medium roast · 250 g",
+        "unit": "per bag",
+        "alt": "Medium-roasted Colombia Huila beans"
+      },
+      "brazil": {
+        "name": "Brazil Cerrado",
+        "flavor": "Nut, chocolate",
+        "roast": "Espresso roast · 250 g",
+        "unit": "per bag",
+        "alt": "Dark-roasted Brazil Cerrado beans for espresso"
+      },
+      "drip": {
+        "name": "Drip bags",
+        "flavor": "Assorted, 10 pieces",
+        "roast": "Brew anywhere: open, pour hot water, done",
+        "unit": "per set",
+        "alt": "Assorted drip bags, 10 pieces"
+      },
+      "subscription": {
+        "name": "Subscription"
+      }
+    }
+  },
+  "subscription": {
+    "title": "Subscription — coffee just arrives",
+    "text": "Once a month we bring two 250 g bags of freshly roasted coffee — no reminders, no shop runs.",
+    "items": [
+      "Two 250 g bags a month, free delivery",
+      "You can swap the roasts or skip a month — just tell the manager",
+      "Pay on delivery, no online payment",
+      "Cancel any time, no fees"
+    ],
+    "btn": "Start subscription",
+    "cardLabel": "Monthly subscription",
+    "per": "/ mo",
+    "note1": "That's 2 × 250 g bags with delivery. For comparison: two bags separately — {compare} BYN plus delivery.",
+    "note2": "The first time we call you ourselves; after that we deliver on a day that suits you."
+  },
+  "delivery": {
+    "title": "Delivery and pickup",
+    "city": {
+      "title": "City delivery",
+      "text": "Courier delivery <b>within 1–3 days of roasting</b>, at a time we agree on by phone.",
+      "fee": "{fee} BYN for a one-time order. <b>Free delivery with a subscription.</b>"
+    },
+    "pickup": {
+      "title": "Pickup",
+      "address": "Minsk, 16 Oktyabrskaya St (courtyard entrance). Mon–Sat, 10:00–19:00.",
+      "text": "<b>Free</b>, and you can pick it up on the roast day — just tell the manager when they call."
+    },
+    "note": "Where exactly and when — the manager will confirm on the call. Another district or time? Just say so: we deliver those too."
+  },
+  "order": {
+    "title": "Leave a request — we will call back",
+    "lead": "Pick what you're after and leave your number. The manager calls back within a working day, sorts out the details and places the order. Pay on delivery, no online payment.",
+    "contacts": {
+      "call": "Call us yourself",
+      "callNote": "Mon–Sat, 10:00–19:00",
+      "write": "Message us",
+      "writeNote": "We reply within the day",
+      "pickup": "Pickup",
+      "pickupAddress": "Minsk, 16 Oktyabrskaya St",
+      "pickupNote": "Courtyard entrance, Mon–Sat 10:00–19:00"
+    }
+  },
+  "form": {
+    "title": "Coffee request",
+    "sub": "We call once. No newsletters, no spam.",
+    "orderLabel": "What would you like",
+    "oneTime": "One-time order — I'll pick a roast",
+    "advice": "Not sure yet — need advice",
+    "nameLabel": "Name",
+    "namePh": "What should we call you",
+    "phoneLabel": "Phone",
+    "phonePh": "+375 (29) 345-67-89",
+    "commentLabel": "Comment",
+    "commentPh": "For example: delivery area, a convenient time, how you brew",
+    "agreement": "I agree to data processing so the manager can call me back and place the order",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "again": "Send another request",
+    "small": "We call back during working hours. Prefer to call us? <phone/>",
+    "success": "Request sent. The manager will call <b>{phone}</b> within a working day and place the order.",
+    "duplicate": "A request from <b>{phone}</b> was already sent at {time}. We will call you back — no need to resend. Want to change something? Just tell the manager when we call.",
+    "error": "<b>Couldn't send the request</b> — looks like the connection dropped. Try again in a minute, or simply call us: <phone/> (Mon–Sat, 10:00–19:00).",
+    "tooMany": "<b>Too many attempts.</b> Please wait a little or call us: <phone/> (Mon–Sat, 10:00–19:00).",
+    "errors": {
+      "phoneRequired": "Enter your phone number",
+      "phoneInvalid": "Check the phone number",
+      "agreementRequired": "Consent to data processing is required"
+    }
+  },
+  "footer": {
+    "brand": "Kvarta Roastery",
+    "text": "A small coffee roastery in Minsk. We roast in small batches and deliver within 1–3 days of roasting.",
+    "contacts": "<phone/><br/>Minsk, 16 Oktyabrskaya St (courtyard entrance)<br/>Mon–Sat, 10:00–19:00"
+  }
+}
