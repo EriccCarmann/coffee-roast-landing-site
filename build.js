@@ -10,7 +10,8 @@ rmSync('dist', { recursive: true, force: true });
 cpSync('public', 'dist', { recursive: true });
 
 const options = {
-  entryPoints: ['src/index.jsx'],
+  // two bundles: the public site (index.js/css) and the admin (admin.js/css, opened at /admin)
+  entryPoints: { index: 'src/index.jsx', admin: 'src/admin/main.jsx' },
   bundle: true,
   outdir: 'dist',
   jsx: 'automatic',

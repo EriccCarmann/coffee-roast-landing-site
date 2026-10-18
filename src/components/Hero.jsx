@@ -1,8 +1,10 @@
 import { LANGS, useLang } from '../language/LangContext.jsx';
 import T from '../language/T.jsx';
 import Button from './Button.jsx';
-import { PHOTOS } from '../data/images.js';
+import {ICONS, PHOTOS} from '../data/images.js';
 import { PRICES } from '../data/products.js';
+import {BEANS_SRC} from "./CoffeeBeans.jsx";
+export const LOGO = '/images/logo_kvarta.png';
 
 // The dark curved shape on the right. EDGE is the curve itself; it is drawn once as the fill and again,
 // shifted to the right, as the contour lines. The svg stretches with the hero (preserveAspectRatio="none").
@@ -48,7 +50,7 @@ export default function Hero() {
         <div className="vb-h3k__inner">
           <div className="vb-h3k__top">
             <div className="vb-h3k__brand">
-              {t('footer.brand')}
+              <img src={LOGO} alt="" draggable="false" className="logo"/>
               <span className="vb-h3k__brand-slogan"><T k="hero.slogan" /></span>
             </div>
             <nav className="vb-h3k__nav" aria-label={t('hero.navAria')}>
@@ -71,7 +73,6 @@ export default function Hero() {
 
           <div className="vb-h3k__grid">
             <div>
-              <p className="vb-h3k__eyebrow vb-h3k__anim"><T k="hero.eyebrow" /></p>
               <h1 id="vb-h3k-title" className="vb-h3k__title vb-h3k__anim vb-h3k__anim--2"><T k="hero.title" /></h1>
               <p className="vb-h3k__lead vb-h3k__anim vb-h3k__anim--3"><T k="hero.lead" /></p>
               <div className="vb-h3k__actions vb-h3k__anim vb-h3k__anim--4">

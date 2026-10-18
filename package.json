@@ -4,11 +4,14 @@
   "private": true,
   "type": "module",
   "description": "Kvarta coffee roastery landing page: React + Node.js (Express)",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=22.13"
+  },
   "scripts": {
     "build": "node build.js",
     "start": "node server/index.js",
-    "dev": "node build.js --watch"
+    "dev": "node build.js --watch",
+    "test": "node --test"
   },
   "dependencies": {
     "express": "^4.21.2",

@@ -8,6 +8,7 @@ export const PHOTOS = {
   col: { src: "/images/colombia_huila.jpg", alt: "Средняя обжарка Колумбии Уила" },
   bra: { src: "/images/brazil_cerrado.jpg", alt: "Тёмная обжарка Бразилии Серрадо под эспрессо" },
   drip: { src: "/images/drip_bags.jpg", alt: "Дрип-пакеты ассорти, 10 штук" },
+  logo: { src: "/images/logo_kvarta.png", alt: "Логотип Кварта" },
 };
 
 export const ICONS = {
