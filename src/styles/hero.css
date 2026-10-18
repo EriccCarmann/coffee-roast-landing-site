@@ -1,0 +1,257 @@
+/* Hero: warm light side + dark curved shape on the right (like the reference), cube pattern on the light side,
+   contour lines on the dark side. The curve itself is the inline <svg> in Hero.jsx. */
+.vb-h3k,
+.vb-h3k * { box-sizing: border-box; }
+.vb-h3k input,
+.vb-h3k textarea,
+.vb-h3k select { font: inherit; }
+
+.vb-h3k {
+  /* Light side of the hero. To make the whole hero dark, set --hero-ink to var(--cream) and the three
+     --hero-bg-* stops to dark browns (and the same for the other --hero-* text colors). */
+  --hero-bg-1: #F7EAD3;
+  --hero-bg-2: #EDCB9F;
+  --hero-bg-3: #DBA76B;
+  --hero-ink: #2A1A0E;
+  --hero-lead: #5B3D22;
+  --hero-soft: #7A5530;
+  --hero-em: #A9561A;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  font-family: var(--t-text-font);
+  background: linear-gradient(135deg, var(--hero-bg-1) 0%, var(--hero-bg-2) 52%, var(--hero-bg-3) 100%);
+  color: var(--hero-ink);
+}
+
+/* ---- background layers ---- */
+.vb-h3k__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.vb-h3k__pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45.033' height='78' viewBox='0 0 45.033 78'%3E%3Cg fill='none' stroke='%236b4220' stroke-width='1' stroke-linejoin='round' opacity='.34'%3E%3Cpath d='M0.00 -26.00 L22.52 -13.00 L22.52 13.00 L0.00 26.00 L-22.52 13.00 L-22.52 -13.00Z M0.00 0.00L22.52 -13.00 M0.00 0.00L0.00 26.00 M0.00 0.00L-22.52 -13.00 M45.03 -26.00 L67.55 -13.00 L67.55 13.00 L45.03 26.00 L22.52 13.00 L22.52 -13.00Z M45.03 0.00L67.55 -13.00 M45.03 0.00L45.03 26.00 M45.03 0.00L22.52 -13.00 M0.00 52.00 L22.52 65.00 L22.52 91.00 L0.00 104.00 L-22.52 91.00 L-22.52 65.00Z M0.00 78.00L22.52 65.00 M0.00 78.00L0.00 104.00 M0.00 78.00L-22.52 65.00 M45.03 52.00 L67.55 65.00 L67.55 91.00 L45.03 104.00 L22.52 91.00 L22.52 65.00Z M45.03 78.00L67.55 65.00 M45.03 78.00L45.03 104.00 M45.03 78.00L22.52 65.00 M22.52 13.00 L45.03 26.00 L45.03 52.00 L22.52 65.00 L-0.00 52.00 L-0.00 26.00Z M22.52 39.00L45.03 26.00 M22.52 39.00L22.52 65.00 M22.52 39.00L-0.00 26.00'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 45.033px 78px;
+  -webkit-mask-image: radial-gradient(ellipse 62% 78% at 36% 56%, #000 0%, rgba(0, 0, 0, 0.55) 48%, transparent 100%);
+  mask-image: radial-gradient(ellipse 62% 78% at 36% 56%, #000 0%, rgba(0, 0, 0, 0.55) 48%, transparent 100%);
+}
+.vb-h3k__curve { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+.vb-h3k__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- top bar ---- */
+.vb-h3k__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0 8px;
+  flex-wrap: wrap;
+}
+.vb-h3k__brand {
+  font-family: var(--t-headline-font);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.vb-h3k__brand-slogan {
+  display: inline;
+  font-family: var(--t-text-font);
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--hero-soft);
+  margin-left: 8px;
+}
+/* Light glass pill: stays readable even where the dark curve passes behind the menu at some screen widths. */
+.vb-h3k__nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.62);
+  border: 1px solid rgba(42, 26, 14, 0.1);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.vb-h3k__nav a {
+  color: var(--hero-lead);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.vb-h3k__nav a:hover,
+.vb-h3k__nav a:focus-visible { color: var(--hero-ink); border-bottom-color: var(--amber-lo); }
+
+/* The language switch sits over the light and the dark side depending on the screen width,
+   so it carries its own dark background. */
+.vb-h3k__lang {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(18, 10, 6, 0.9);
+  border: 1px solid rgba(235, 198, 156, 0.22);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.vb-h3k__langbtn {
+  font-family: var(--t-text-font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--dim);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.vb-h3k__langbtn:hover { color: var(--cream); }
+.vb-h3k__langbtn.is-active { background: var(--amber); color: var(--bg-1); }
+.vb-h3k__langbtn:focus-visible { outline: 2px solid var(--amber-hi); outline-offset: 2px; }
+
+/* ---- main grid ---- */
+.vb-h3k__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: center;
+  padding: 40px 0 36px;
+}
+.vb-h3k__eyebrow {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--hero-soft);
+  margin: 0 0 14px;
+}
+.vb-h3k__title {
+  font-family: var(--t-headline-font);
+  font-size: clamp(2.1rem, 7.4vw, 3.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+.vb-h3k__title em { font-style: normal; color: var(--hero-em); }
+.vb-h3k__lead {
+  font-size: 1.06rem;
+  line-height: 1.65;
+  color: var(--hero-lead);
+  margin: 0 0 26px;
+  max-width: 46ch;
+  text-wrap: pretty;
+}
+.vb-h3k__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.vb-h3k__note {
+  font-size: 0.9rem;
+  color: var(--hero-soft);
+  margin: 0;
+  max-width: 44ch;
+}
+.vb-h3k .t-btnflex { border-radius: 10px; }
+.vb-h3k .vb-h3k__btn--primary {
+  background: var(--bg-1);
+  color: var(--sand);
+  border-color: var(--bg-1);
+}
+.vb-h3k .vb-h3k__btn--primary:hover { background: var(--bg-3); border-color: var(--bg-3); }
+.vb-h3k .vb-h3k__btn--ghost {
+  background: transparent;
+  color: var(--hero-ink);
+  border: 1px solid rgba(42, 26, 14, 0.5);
+}
+.vb-h3k .vb-h3k__btn--ghost:hover { border-color: var(--hero-ink); background: rgba(42, 26, 14, 0.07); }
+
+/* Photo: lives on the dark side of the curve. */
+.vb-h3k__stage { position: relative; }
+.vb-h3k__photo {
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 320px;
+  background: var(--bg-2);
+  border: 1px solid rgba(235, 198, 156, 0.28);
+  box-shadow: 0 26px 54px rgba(26, 12, 4, 0.38), 0 0 0 8px rgba(218, 152, 74, 0.07);
+}
+.vb-h3k__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+/* Schedule: a dark glass bar, readable on both sides of the curve. */
+.vb-h3k__schedule {
+  margin: 0 0 30px;
+  padding: 16px 24px;
+  display: flex;
+  gap: 10px 28px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+  color: var(--dim);
+  background: rgba(18, 10, 6, 0.88);
+  border: 1px solid rgba(235, 198, 156, 0.18);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+.vb-h3k__schedule span { text-wrap: pretty; }
+.vb-h3k__schedule strong { color: var(--cream); font-weight: 600; }
+
+/* ---- laptops: brand, menu and language switch must fit one row ---- */
+@media (max-width: 1180px) {
+  .vb-h3k__brand-slogan { display: block; margin: 3px 0 0; }
+  .vb-h3k__nav { gap: 14px; }
+}
+
+/* ---- tablet / phone: the curve becomes a wave on top of the dark panel under the text ---- */
+@media (max-width: 960px) {
+  .vb-h3k__curve { display: none; }
+  .vb-h3k__grid { grid-template-columns: minmax(0, 1fr); gap: 28px; padding: 28px 0 26px; }
+  .vb-h3k__stage {
+    margin: 0 -20px;
+    padding: 70px 20px 34px;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23DA984A' stroke-width='1' stroke-opacity='.2'%3E%3Cpath d='M-10 70 C90 20 170 110 270 60 S390 30 420 20'/%3E%3Cpath d='M-10 120 C100 70 180 160 280 110 S390 80 420 70'/%3E%3Cpath d='M-10 330 C80 290 190 380 290 320 S390 300 420 280'/%3E%3Cpath d='M-10 372 C90 332 200 420 300 362 S390 342 420 322'/%3E%3C/g%3E%3C/svg%3E") center / 100% 100% no-repeat,
+      radial-gradient(420px 260px at 70% 60%, rgba(218, 152, 74, 0.2), transparent 70%),
+      linear-gradient(180deg, #33200f 0%, #160d07 100%);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 48' preserveAspectRatio='none'%3E%3Cpath d='M0 30 C70 4 130 8 200 26 C270 44 330 40 400 10 L400 48 L0 48Z' fill='%23000'/%3E%3C/svg%3E") top / 100% 48px no-repeat, linear-gradient(#000 0 0) bottom / 100% calc(100% - 47px) no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 48' preserveAspectRatio='none'%3E%3Cpath d='M0 30 C70 4 130 8 200 26 C270 44 330 40 400 10 L400 48 L0 48Z' fill='%23000'/%3E%3C/svg%3E") top / 100% 48px no-repeat, linear-gradient(#000 0 0) bottom / 100% calc(100% - 47px) no-repeat;
+  }
+  .vb-h3k__photo { min-height: 240px; }
+  .vb-h3k__photo img { min-height: 240px; }
+}
+@media (max-width: 640px) {
+  .vb-h3k__nav { display: none; }
+  .vb-h3k__lead { font-size: 1rem; }
+  .vb-h3k__brand-slogan { display: block; margin: 4px 0 0; }
+}
+
+.vb-h3k__anim { animation: vb-h3k-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.vb-h3k__anim--2 { animation-delay: 0.08s; }
+.vb-h3k__anim--3 { animation-delay: 0.16s; }
+.vb-h3k__anim--4 { animation-delay: 0.24s; }
+.vb-h3k__anim--5 { animation-delay: 0.32s; }
+@keyframes vb-h3k-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vb-h3k__anim { animation: none; }
+}

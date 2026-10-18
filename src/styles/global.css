@@ -1,0 +1,108 @@
+/* Everything Tilda used to provide that is missing from the exported HTML, plus the shared palette. */
+@import url('https://fonts.googleapis.com/css2?family=LXGW+Marker+Gothic&display=swap');
+
+:root {
+  /* Fonts: in the original, Tilda defined --t-text-font / --t-headline-font. These are system fonts;
+     add your own (@font-face or Google Fonts) and change the values. */
+  --t-text-font: 'LXGW Marker Gothic', serif;
+  --t-headline-font: 'LXGW Marker Gothic', serif;
+
+  /* Palette (dark espresso browns + amber). Every section reads these, so change colors here. */
+  --bg-0: #0d0804;
+  --bg-1: #1a0f08;
+  --bg-2: #2a190c;
+  --bg-3: #3a2412;
+  --amber: #da984a;
+  --amber-hi: #ebb26a;
+  --amber-lo: #b97a30;
+  --sand: #ebc69c;
+  --cream: #f6ebdd;
+  --dim: #c9b49a;
+  --muted: #a8947c;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-line: rgba(235, 198, 156, 0.16);
+}
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg-0); overflow-x: clip; -webkit-text-size-adjust: 100%; }
+
+/* Base button (t-btnflex): sizes come from here, colors from each section's own classes. */
+.t-btnflex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  font-family: var(--t-text-font);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.t-btnflex_md { min-height: 52px; padding: 0 28px; font-size: 1rem; }
+.t-btnflex_sm { min-height: 40px; padding: 0 18px; font-size: 0.9rem; }
+.t-btnflex:disabled { opacity: 0.65; cursor: default; }
+.t-btnflex:focus-visible { outline: 2px solid var(--amber-hi); outline-offset: 2px; }
+
+/* Decorative coffee beans. Each one sits in a zero-height slot placed between two sections (see App.jsx),
+   so it straddles the boundary. The bean box is always a fixed square (--bean-size) and the PNG is scaled to fit
+   it, so any PNG proportions work.
+   Size and --bean-top are tuned to the free space (section padding) around each boundary, so beans never cover
+   text: big on wide screens (where they may overlap a photo corner), compact below 1280px, smaller again below
+   960px and 480px. If you change section paddings, adjust --bean-size / --bean-top here. */
+.beans-slot { position: relative; height: 0; z-index: 5; pointer-events: none; }
+.beans {
+  position: absolute;
+  top: var(--bean-top);
+  width: var(--bean-size);
+  height: var(--bean-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(var(--bean-rot));
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+.beans img { display: block; width: 100%; height: 100%; object-fit: contain; }
+/* Shown only while public/images/coffee-beans.png does not exist yet. */
+.beans__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  border: 2px dashed rgba(235, 178, 106, 0.75);
+  border-radius: 48% 52% 46% 54% / 55% 45% 55% 45%;
+  background: rgba(218, 152, 74, 0.1);
+  color: var(--sand);
+  font: 600 0.72rem/1.25 var(--t-text-font);
+}
+/* Side and tilt. right: max(...) keeps the rotated box inside the screen. */
+.beans--a { --bean-rot: -14deg; right: max(6%, 28px); }
+.beans--b { --bean-rot: 18deg; left: max(4%, 24px); }
+.beans--c { --bean-rot: -32deg; right: max(5%, 32px); }
+/* >= 1280px: big (bean a may overlap the corner of the about photo, like in the reference). */
+.beans--a { --bean-size: 190px; --bean-top: -36px; }
+.beans--b { --bean-size: 150px; --bean-top: -75px; }
+.beans--c { --bean-size: 170px; --bean-top: -100px; }
+/* 961-1279px: compact, fits the gap between sections (a: 102px, b: 156px, c: 160px). */
+@media (max-width: 1279px) {
+  .beans--a { --bean-size: 84px; --bean-top: -21px; }
+  .beans--b { --bean-size: 120px; --bean-top: -62px; }
+  .beans--c { --bean-size: 120px; --bean-top: -60px; }
+}
+/* <= 960px (one column, smaller section padding): gaps are a: 86px, b/c: 140px. */
+@media (max-width: 960px) {
+  .beans--a { --bean-size: 70px; --bean-top: -22px; }
+  .beans--b { --bean-size: 100px; --bean-top: -60px; }
+  .beans--c { --bean-size: 100px; --bean-top: -60px; }
+}
+/* <= 480px: gaps b/c shrink to 108px. */
+@media (max-width: 480px) {
+  .beans--b { --bean-size: 84px; --bean-top: -44px; }
+  .beans--c { --bean-size: 84px; --bean-top: -44px; }
+}
