@@ -1,0 +1,44 @@
+.vb-w5c,
+.vb-w5c * { box-sizing: border-box; }
+.vb-w5c input,
+.vb-w5c textarea,
+.vb-w5c select { font: inherit; }
+
+.vb-w5c {
+  font-family: var(--t-text-font);
+  background: linear-gradient(180deg, #120a05 0%, #080503 100%);
+  border-top: 1px solid rgba(235, 198, 156, 0.1);
+  color: var(--cream);
+}
+.vb-w5c__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 34px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px 40px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+}
+.vb-w5c__brand {
+  font-family: var(--t-headline-font);
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.vb-w5c__text {
+  color: var(--muted);
+  margin: 0 0 4px;
+  max-width: 44ch;
+  line-height: 1.55;
+}
+.vb-w5c__contacts {
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.7;
+}
+.vb-w5c__contacts a {
+  color: var(--sand);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(235, 198, 156, 0.3);
+}
+.vb-w5c__contacts a:hover { border-bottom-color: var(--amber-hi); color: var(--amber-hi); }
