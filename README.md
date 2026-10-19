@@ -29,3 +29,4 @@ Development: `npm run dev` rebuilds on every change and restarts the server auto
 - Orders data is stored in SQLite database. SQLite was chosen for its structure and querying capacities. 
 - In order to access admin page you need the correct password.
 - For privacy reasons, TG bot's token is shared only with certain people.
+- Most of the project was built using AI. My input was: changing the site's look, adding TG bot, reviewing the code.
